@@ -27,12 +27,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         airportsListView = (ListView) findViewById(R.id.airportsListView);
         airportsListView.setOnItemClickListener(this);
-        airportsList = new ArrayList();
 
          database = new AirportsDatabase(this);
         cursor = database.getAllAirports();
-
-        // adapter = new ArrayAdapter<Airport>( getApplicationContext(), airportsList);
+        
         adapter = new AirportsAdapter(getApplicationContext(), cursor);
         airportsListView.setAdapter(adapter);
 
