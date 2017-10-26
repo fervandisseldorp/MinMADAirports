@@ -1,5 +1,6 @@
 package com.f.minmadairports;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         airportsListView = (ListView) findViewById(R.id.airportsListView);
         airportsListView.setOnItemClickListener(this);
 
-         database = new AirportsDatabase(this);
+        database = new AirportsDatabase(this);
         cursor = database.getAllAirports();
         
         adapter = new AirportsAdapter(getApplicationContext(), cursor);
