@@ -9,12 +9,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CursorAdapter;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     ListView airportsListView;
+    ExpandableListView expAirportsListView;
     ArrayList airportsList;
     //ArrayAdapter<Airport> adapter;
     CursorAdapter adapter;
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
 
         airportsListView = (ListView) findViewById(R.id.airportsListView);
+        expAirportsListView = (ExpandableListView) findViewById(R.id.exp_airportsListView);
+
         airportsListView.setOnItemClickListener(this);
 
         database = new AirportsDatabase(this);
@@ -35,14 +40,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter = new AirportsAdapter(getApplicationContext(), cursor);
         airportsListView.setAdapter(adapter);
 
-
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         System.out.println("Clicked on item");
 
-        Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
         cursor.moveToPosition( position );
 
         String icao = cursor.getString(cursor.getColumnIndex("icao"));
@@ -57,6 +61,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         intent.putExtra("AIRPORT", selectedAirport);
         startActivity(intent);
     }
-
 
 }

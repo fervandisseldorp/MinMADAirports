@@ -16,7 +16,7 @@ public class Airport implements Serializable {
     String iso_country;
     String municipaty;
 
-    public Airport(String icao, String name, double longitude, double lattitude, String elevation, String iso_country, String municipaty) {
+    public Airport(String icao, String name, double lattitude, double longitude, String elevation, String iso_country, String municipaty) {
         this.icao = icao;
         this.name = name;
         this.longitude = longitude;
