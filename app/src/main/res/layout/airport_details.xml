@@ -8,12 +8,15 @@
 
     <TextView
         android:id="@+id/detailNameTV"
-        android:layout_width="142dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="5dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/distanceTV"
+        app:layout_constraintEnd_toStartOf="@+id/DetailsIcaoTV"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -21,23 +24,36 @@
         android:layout_width="152dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/distanceTV"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <fragment
+    <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/googleMap"
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
         app:layout_constraintBottom_toTopOf="@+id/detailNameTV"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <TextView
+        android:id="@+id/distanceTV"
+        android:layout_width="321dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="5dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

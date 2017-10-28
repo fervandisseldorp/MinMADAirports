@@ -26,7 +26,7 @@ public class AirportsDatabase extends SQLiteAssetHelper {
         String query = "SELECT rowid _id, * FROM airports";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
-        db.close();
+        // db.close();
         return c;
     }
 }
