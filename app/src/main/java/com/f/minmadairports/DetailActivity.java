@@ -70,7 +70,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         endLocation.setLatitude( endLatitude);
         endLocation.setLongitude( endLongitude);
         distance = startLocation.distanceTo(endLocation);
-        distanceTV.setText("Distance: " + distance );
+        distanceTV.setText("Distance: " + distance + " meters" );
 
         mMap.addMarker(new MarkerOptions().position(schiphol).title("Schiphol Airport"));
         mMap.addMarker(new MarkerOptions().position(destination).title(selectedAirport.getName()));
